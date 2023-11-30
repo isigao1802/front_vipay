@@ -1,0 +1,78 @@
+<div class="col-md-6 offset-md-3">
+    <h3 class="text-center">Edición de Transferencia</h3>
+    <form (ngSubmit)= "onSubmit()" #transferenciaForm = "ngForm">
+      <div class="form-group">
+        <label>Id de Transferencia : </label>
+        <input type = "text"
+        class="form-control"
+        id = "idTransferencia"
+        [(ngModel)] = "transferencia.idTransferencia"
+        name = "idTransferencia"
+        required
+        minlength="1"
+        maxlength="10"
+        placeholder="Digite su nombre "
+        #idTransferencia = "ngModel"
+        >
+        <div class="alert alert-danger" *ngIf= "idTransferencia.invalid && (idTransferencia.dirty || idTransferencia.touched)">
+          <div *ngIf = "idTransferencia.errors.required">
+            Digite el id de transferencia por favor
+          </div>
+          <div *ngIf = "idTransferencia.errors.minlength">
+            El nombre tiene que contener como minimo 1 caracter.
+          </div>
+          <div *ngIf = "idTransferencia.errors.maxlength">
+            El nombre tiene que tener como maximo 10 caracteres.
+          </div>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label>Nombre Crédito : </label>
+        <input type = "text"
+        class="form-control"
+        id = "nombreCredito"
+        [(ngModel)] = "transferencia.nombreCredito"
+        name = "nombreCredito"
+        required
+        minlength="1"
+        maxlength="40"
+        placeholder="Digite el nombre del Crédito"
+        #nombreCredito = "ngModel"
+        >
+        <div class="alert alert-danger" *ngIf= "nombreCredito.invalid && (nombreCredito.dirty || nombreCredito.touched)">
+          <div *ngIf = "nombreCredito.errors.required">
+            Digite el nombre de Crédito por favor
+          </div>
+          <div *ngIf = "nombreCredito.errors.minlength">
+            El nombre de Crédito debe contener como minimo 4 caracteres
+          </div>
+          <div *ngIf = "nombreCredito.errors.maxlength">
+            El nombre de Crédito debe tener como maximo 10 caracteres
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Tipo de Documento : </label>
+        <input type = "tipoDocCredito"
+        class="form-control"
+        id = "tipoDocCredito"
+        [(ngModel)] = "transferencia.tipoDocCredito"
+        name = "tipoDocCredito"
+        required
+        minlength="1"
+        maxlength="40"
+        placeholder="Digite su tipoDocCredito "
+        #tipoDocCredito = "ngModel"
+        >
+        <div class="alert alert-danger" *ngIf= "tipoDocCredito.invalid && (tipoDocCredito.dirty || tipoDocCredito.touched)">
+          <div *ngIf = "tipoDocCredito.errors.required">
+            Digite el tipo de documento por favor
+          </div>
+        </div>
+      </div>
+  
+      <button class="btn btn-success" [disabled]= "!transferenciaForm.form.valid">Guardar</button>
+    </form>
+  </div>
+  

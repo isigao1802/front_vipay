@@ -1,0 +1,35 @@
+<h2>Lista Transferencias</h2>
+<table class="table table-striped">
+  <thead class="table-dark">
+    <tr>
+      <th>ID</th>
+      <th>Nombre de Crédito</th>
+      <th>Apellido de Crédito</th>
+      <th>Tipo de Documento</th>
+      <th>Número de Documento</th>
+      <th>Cuenta Crédito</th>
+      <th>Importe</th>
+      <th>Moneda</th>
+      <th>Código Entidad Financiera</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor= "let transferencia of transferencias">
+      <td>{{transferencia.idTransferencia}}</td>
+      <td>{{transferencia.nombreCredito}}</td>
+      <td>{{transferencia.apellidoCredito}}</td>
+      <td>{{transferencia.tipoDocCredito}}</td>
+      <td>{{transferencia.nroDocCredito}}</td>
+      <td>{{transferencia.nroCuentaCredito}}</td>
+      <td>{{transferencia.importe}}</td>
+      <td>{{transferencia.moneda}}</td>
+      <td>{{transferencia.codEntidadFinanciera}}</td>
+      <td class="d-flex justify-content-center">
+        <button (click)= "actualizarTransferencia(transferencia.idTransferencia)" class="btn btn-info">Editar</button>
+        <button (click)= "eliminarTransferencia(transferencia.idTransferencia)" class="btn btn-danger" style="margin-left : 10px;">Eliminar</button>
+        <button (click)= "verDetallesDelaTransferencia(transferencia.idTransferencia)" class="btn btn-primary" style="margin-left : 10px;">Detalles</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,15 @@
+
+.form-group input2 {
+    width: 200px; /* Ajusta el valor según tus necesidades */
+    /* Puedes ajustar otros estilos según sea necesario */
+}
+
+/* En tu archivo de estilos (por ejemplo, styles.css) */
+
+.ajuste-input {
+    width: 210px; /* Ajusta el ancho según tus necesidades */
+}
+
+.ajuste-input2 {
+    width: 460px; /* Ajusta el ancho según tus necesidades */
+}

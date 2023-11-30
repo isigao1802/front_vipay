@@ -1,0 +1,25 @@
+<h2>Lista Operaciones</h2>
+<table class="table table-striped">
+  <thead class="table-dark">
+    <tr>
+      <th>Id Operación</th>
+      <th>Monto a Desembolsar</th>
+      <th>Cuenta Individual</th>
+      <th>Nombre Cuenta Individual</th>
+      <th>Nro Documento</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor= "let operacion of operaciones">
+      <td>{{operacion.idOperacion}}</td>
+      <td>{{operacion.montoDesembolso | currency:'PYG ':'symbol':'1.0-0'}}</td>
+      <td>{{operacion.nroCuentaInvidual}}</td>
+      <td>{{operacion.nombreCuentaIndividual}}</td>
+      <td>{{operacion.nroDocumento}}</td>
+      <td>
+        <button routerLink="enviar-transferencia/{{operacion.idOperacion}}" routerLinkActive="active" class="btn btn-primary">Transferir</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
