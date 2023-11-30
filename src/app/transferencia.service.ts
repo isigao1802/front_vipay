@@ -66,16 +66,24 @@ export class TransferenciaService {
       const headers = response.headers;
 
       const bearerToken = headers.get('Authorization')!;
-      const token = bearerToken.replace('Bearer ', '');
+      //const token = bearerToken.replace('Bearer ', '');
 
-      localStorage.setItem('token',token);
+      if (bearerToken) {
+        const token = bearerToken.replace('Bearer ', '');
+        localStorage.setItem('token', token);
+      } else {
+        // Manejar el caso en el que 'Authorization' no está presente en los encabezados.
+        console.error('No se encontró el token en los encabezados de Authorization.');
+      }
+
+      //localStorage.setItem('token',token);
 
       return body;
     }))
   }
 
   getToken(){
-    return localStorage.getItem('token ');
+    return localStorage.getItem('token');
   }
 
 }

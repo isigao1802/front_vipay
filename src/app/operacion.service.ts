@@ -1,7 +1,9 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
+import { Observable, map } from 'rxjs';
 import { Operacion } from './operacion';
+import {  Credentials } from './transferencia';
+
 
 @Injectable({
   providedIn: 'root'
@@ -49,4 +51,31 @@ export class OperacionService {
   eliminarOperacion(id:number): Observable<Object>{
     return this.httpClient.delete(`${this.baseURL}/${id}`, { headers: this.getHeaders()});
   }
+
+  login(creds: Credentials){
+    return this.httpClient.post('http://localhost:8080/login',creds, {
+      observe:'response'
+    }).pipe(map((response: HttpResponse<any>) => {
+      const body = response.body;
+      const headers = response.headers;
+
+      const bearerToken = headers.get('Authorization')!;
+      //const token = bearerToken.replace('Bearer ', '');
+
+      if (bearerToken) {
+        const token = bearerToken.replace('Bearer ', '');
+        localStorage.setItem('token', token);
+      } else {
+        // Manejar el caso en el que 'Authorization' no está presente en los encabezados.
+        console.error('No se encontró el token en los encabezados de Authorization.');
+      }
+      return body;
+    }))
+  }
+
+  getToken(){
+    return localStorage.getItem('token');
+  }
+
+
 }

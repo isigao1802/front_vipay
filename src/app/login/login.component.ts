@@ -19,13 +19,20 @@ export class LoginComponent {
  } 
 
   constructor(
-    private transferenciaService: TransferenciaService, private operacionService: OperacionService, private router: Router
+    private transferenciaService: TransferenciaService,
+    private operacionService: OperacionService,
+    private router: Router
   ){}
 
   login(form: NgForm){
     console.log('form value', form.value)
 
       this.transferenciaService.login(this.creds)
+        .subscribe(response => {
+          this.router.navigate(['/']);
+        }) 
+
+        this.operacionService.login(this.creds)
         .subscribe(response => {
           this.router.navigate(['/']);
         }) 
