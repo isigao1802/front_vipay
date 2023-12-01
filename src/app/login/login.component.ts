@@ -45,6 +45,7 @@ export class LoginComponent {
 */
 
 // login.component.ts
+import  swal  from 'sweetalert2';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
@@ -61,8 +62,8 @@ export class LoginComponent {
   constructor(private authService: AuthService, private router: Router) {}
 
   onSubmit(): void {
-    // Aquí debes llamar al servicio de autenticación para verificar las credenciales
-    // Puedes simularlo por ahora, por ejemplo, comparando con credenciales fijas.
+    // Aquí se debe llamar al servicio de autenticación para verificar las credenciales
+    // Por ahora, por ejemplo, se compara con credenciales fijas.
     const isValidUser = this.authService.login(this.username, this.password);
 
     if (isValidUser) {
@@ -70,7 +71,7 @@ export class LoginComponent {
       this.router.navigate(['/transferencias']);
     } else {
       // Si la autenticación falla, puedes manejarlo de alguna manera (mostrar un mensaje de error, por ejemplo)
-      alert("'Credenciales inválidas'");
+      swal('Crendenciales incorrectas',`Verifique las credenciales por favor`,`error`);
       console.log('Credenciales inválidas');
     }
   }

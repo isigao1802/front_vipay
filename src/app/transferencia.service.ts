@@ -12,10 +12,10 @@ export class TransferenciaService {
   //Esta URL obtiene el listado de todos las transferencias en el backend
   private baseURL = "http://localhost:8080/tme/transferencia";
   private listar= "listar_transferencias";
-  private guardar_transferencias= "transferencias";
+  private guardar_transferencias= "enviar_transferencias";
   private obtenerOperacion="obtener_operacion";
 
-  // Include your token here
+  // Incluyo el token de seguridad
   private token = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJpc2lkcm9nYW9uYUBkaWFjb25pYS5jb20ucHkiLCJleHAiOjE3MDM4NzI1NTcsIm5vbWJyZSI6IklzaWRybyBHYW9uYSJ9.7Ua08O0W9HVZJuZ6VhgHHAlFHJAkFT0yS-hQSOMReW4";
 
   constructor(private httpClient : HttpClient) { }
