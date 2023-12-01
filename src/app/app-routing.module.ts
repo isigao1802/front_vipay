@@ -8,11 +8,12 @@ import { RegistrarTransferenciaComponent } from './registrar-transferencia/regis
 import { ActualizarOperacionComponent } from './actualizar-operacion/actualizar-operacion.component';
 import { EnviarTransferenciaComponent } from './enviar-transferencia/enviar-transferencia.component';
 import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
-  {path : 'operaciones',component:ListaOperacionesComponent},
-  {path : 'transferencias',component:ListaTransferenciasComponent},
-  {path:'',redirectTo:'transferencias',pathMatch:'full'},
+  {path : 'operaciones',component:ListaOperacionesComponent },
+  {path : 'transferencias',component:ListaTransferenciasComponent, canActivate: [AuthGuard] },
+  {path:'',redirectTo:'login',pathMatch:'full'},
   {path : 'operaciones/enviar-transferencia/:idOperacion',component : EnviarTransferenciaComponent},
   {path : 'registrar-transferencia',component : RegistrarTransferenciaComponent},
   {path : 'actualizar-transferencia/:nroCuenta',component : ActualizarTransferenciaComponent},

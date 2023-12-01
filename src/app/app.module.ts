@@ -14,6 +14,10 @@ import { ActualizarOperacionComponent } from './actualizar-operacion/actualizar-
 import { EnviarTransferenciaComponent } from './enviar-transferencia/enviar-transferencia.component';
 import { LoginComponent } from './login/login.component';
 import { AuthInterceptor } from './helpers/auth.interceptor';
+import { AuthService } from './auth.service';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AuthGuard } from './auth.guard';
+
 
 @NgModule({
   declarations: [
@@ -31,12 +35,13 @@ import { AuthInterceptor } from './helpers/auth.interceptor';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [ 
     {
       provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true
-    }
+    }, AuthService, AuthGuard
   ],
   bootstrap: [AppComponent]
 })

@@ -1,0 +1,32 @@
+/* login.component.css */
+.login-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  button {
+    background-color: #323ee6;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  label {
+    display: block; /* Hace que las etiquetas estén en una línea separada */
+    margin-bottom: 5px; /* Agrega espacio entre la etiqueta y el input */
+  }
+  
+  input {
+    width: 100%; /* Hace que los inputs ocupen todo el ancho disponible */
+    padding: 8px; /* Ajusta el relleno según tus preferencias */
+    box-sizing: border-box; /* Incluye el relleno en el ancho total */
+  }
