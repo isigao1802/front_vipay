@@ -5,6 +5,7 @@ export class Operacion {
     nroCuentaInvidual:string;
     nombreCuentaIndividual:string;
     apellidoCuentaIndividual:string;
-    nroDocumento:string
+    nroDocumento:string;
+    nroOperacionDiaconia:string
   }
   
