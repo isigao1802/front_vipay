@@ -12,6 +12,7 @@
       <th>Monto a Desembolsar</th>
       <th>Cuenta Individual</th>
       <th>Nombre Cuenta Individual</th>
+      <th>Apellido Cuenta Individual</th>
       <th>Nro Documento</th>
       <th>Acciones</th>
     </tr>
@@ -22,6 +23,7 @@
       <td>{{operacion.montoDesembolso | currency:'PYG ':'symbol':'1.0-0'}}</td>
       <td>{{operacion.nroCuentaInvidual}}</td>
       <td>{{operacion.nombreCuentaIndividual}}</td>
+      <td>{{operacion.apellidoCuentaIndividual}}</td>
       <td>{{operacion.nroDocumento}}</td>
       <td>
         <button routerLink="enviar-transferencia/{{operacion.idOperacion}}" routerLinkActive="active" class="btn btn-primary">Transferir</button>
