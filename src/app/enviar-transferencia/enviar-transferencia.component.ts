@@ -35,6 +35,7 @@ export class EnviarTransferenciaComponent implements OnInit {
       this.transferencia.apellidoCredito=this.operacion.apellidoCuentaIndividual;
       this.transferencia.nombreCredito=this.operacion.nombreCuentaIndividual;
       this.transferencia.nroDocCredito=this.operacion.nroDocumento;
+      this.transferencia.nroOperacionTransferida=this.operacion.idOperacion;
     },error => console.log(error));
   }
 

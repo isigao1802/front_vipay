@@ -13,3 +13,7 @@
 .ajuste-input2 {
     width: 460px; /* Ajusta el ancho según tus necesidades */
 }
+
+.move-left-label {
+    margin-right: 100px; /* Ajusta el valor según tus necesidades */
+}
