@@ -1,0 +1,30 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+    margin: 20px;
+  }
+  
+  h3 {
+    color: #008080;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  b {
+    font-weight: bold;
+  }
+  
+  .details-container {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  

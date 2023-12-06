@@ -16,7 +16,7 @@ export class TransferenciaDetallesComponent implements OnInit {
   constructor(private route:ActivatedRoute,private transferenciaServicio:TransferenciaService) { }
 
   ngOnInit(): void {
-    this.id = this.route.snapshot.params['id'];
+    this.id = this.route.snapshot.params['idTransferencia'];
     this.transferencia = new Transferencia();
     this.transferenciaServicio.obtenerTransferenciaPorId(this.id).subscribe(dato => {
       this.transferencia = dato;

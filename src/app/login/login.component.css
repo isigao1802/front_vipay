@@ -1,19 +1,21 @@
 /* login.component.css */
 .login-container {
     max-width: 400px;
+    margin-top: 400px;
     margin: auto;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
+  
   }
   
   .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
   }
   
   button {
-    background-color: #323ee6;
-    color: white;
+    background-color: #38e632;
+    color: rgb(0, 0, 0);
     padding: 10px 15px;
     border: none;
     border-radius: 3px;
@@ -33,7 +35,9 @@
 
   .login-container.with-logo {
     background-image: url('C:\Users\TI\Desktop\diaconiaWeb\icono.jpg');
-    background-size: 50px; /* Puedes ajustar esto según tus necesidades */
+    background-size: 80px; /* Puedes ajustar esto según tus necesidades */
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top center;
+    /*background-position: right bottom;*/ /* Ajusta la posición vertical a la parte inferior */
   }
+  

@@ -1,27 +1,23 @@
-<h3>Detalles de la Transferencia</h3>
-<div>
-  <div>
-    <label><b>ID : </b> {{ transferencia.idTransferencia }}</label>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalles de la Transferencia</title>
+  <link rel="stylesheet" href="transferencia-detalles.component.css">
+</head>
+<body>
+  <div class="details-container">
+    <h3>Detalles de la Transferencia</h3>
+    <label><b>ID :</b> {{ transferencia.idTransferencia }}</label>
+    <label><b>Nombre de Crédito :</b> {{ transferencia.nombreCredito }}</label>
+    <label><b>Apellido de Crédito :</b> {{ transferencia.apellidoCredito }}</label>
+    <label><b>Tipo de Documento :</b> {{ transferencia.tipoDocCredito }}</label>
+    <label><b>Número de Documento :</b> {{ transferencia.nroDocCredito }}</label>
+    <label><b>Importe :</b> {{ transferencia.importe }}</label>
+    <label><b>Moneda :</b> {{ transferencia.moneda }}</label>
+    <label><b>Código Entidad Financiera :</b> {{ transferencia.codEntidadFinanciera }}</label>
+    <label><b>Número de Transacción :</b> {{ transferencia.nroTransaccion }}</label>
   </div>
-  <div>
-    <label><b>Nombre de Crédito : </b> {{ transferencia.nombreCredito }}</label>
-  </div>
-  <div>
-    <label><b>Apellido de Crédito : </b> {{ transferencia.apellidoCredito }}</label>
-  </div>
-  <div>
-    <label><b>Tipo de Documento : </b> {{ transferencia.tipoDocCredito }}</label>
-  </div>
-  <div>
-    <label><b>Número de Documento : </b> {{ transferencia.nroDocCredito }}</label>
-  </div>
-  <div>
-    <label><b>Importe : </b> {{ transferencia.importe }}</label>
-  </div>
-  <div>
-    <label><b>Moneda : </b> {{ transferencia.moneda }}</label>
-  </div>
-  <div>
-    <label><b>Código Entidad Financiera : </b> {{ transferencia.codEntidadFinanciera }}</label>
-  </div>
-</div>
+</body>
+</html>

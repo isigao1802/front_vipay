@@ -17,7 +17,7 @@ const routes: Routes = [
   {path : 'operaciones/enviar-transferencia/:idOperacion',component : EnviarTransferenciaComponent},
   {path : 'registrar-transferencia',component : RegistrarTransferenciaComponent},
   {path : 'actualizar-transferencia/:nroCuenta',component : ActualizarTransferenciaComponent},
-  {path : 'transferencia-detalles/:nroCuenta',component : TransferenciaDetallesComponent},
+  {path : 'transferencia-detalles/:idTransferencia',component : TransferenciaDetallesComponent},
   {path : 'login',component : LoginComponent}
 ];
 

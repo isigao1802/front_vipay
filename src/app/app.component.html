@@ -22,16 +22,56 @@
 
 
 <!-- app.component.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tu Título</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      /* Estilos para el encabezado, si es necesario */
+    }
+
+    footer {
+      margin-top: auto; /* Esto empujará el pie de página hacia abajo */
+      text-align: right; /* Esto alineará el contenido del pie de página a la derecha */
+      background-color: #f1f1f1; /* Puedes ajustar el color de fondo según tus necesidades */
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+
 <div>
   <header>
     <!-- Aquí puedes agregar elementos de encabezado comunes a todas las páginas -->
     <h1 class="text-center">Sistema de Gestión de Transferencias</h1>
     <nav>
-      <!--<a routerLink="/login">Login</a>
+      <!-- <a routerLink="/login">Login</a>
       <a routerLink="/transferencia">Transferencia</a>
-      <a routerLink="/operaciones">Operaciones</a>-->
+      <a routerLink="/operaciones">Operaciones</a> -->
     </nav>
   </header>
 
   <router-outlet></router-outlet>
 </div>
+
+<footer>
+  <div class="text-center">
+    <img src="C:\\Users\\TI\\Desktop\\diaconiaWeb\\logo.png" alt="Diaconia" height="50">
+    <p style="font-size: 12px;">© 2023 Diaconia. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+</body>
+</html>
+

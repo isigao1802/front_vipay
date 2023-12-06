@@ -14,6 +14,7 @@ export class TransferenciaService {
   private listar= "listar_transferencias";
   private guardar_transferencias= "enviar_transferencias";
   private obtenerOperacion="obtener_operacion";
+  private obtenerTransferencia="obtener_transferencia";
 
   // Incluyo el token de seguridad
   private token = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJpc2lkcm9nYW9uYUBkaWFjb25pYS5jb20ucHkiLCJleHAiOjE3MDM4NzI1NTcsIm5vbWJyZSI6IklzaWRybyBHYW9uYSJ9.7Ua08O0W9HVZJuZ6VhgHHAlFHJAkFT0yS-hQSOMReW4";
@@ -46,7 +47,7 @@ export class TransferenciaService {
 
   //este metodo sirve para obtener o buscar una transferencia
   obtenerTransferenciaPorId(id:number):Observable<Transferencia>{
-    return this.httpClient.get<Transferencia>(`${this.baseURL}/${id}`);
+    return this.httpClient.get<Transferencia>(`${this.baseURL}/${this.obtenerTransferencia}/${id}`, { headers: this.getHeaders()});
   }
 
   obtenerOperacionPorId(id:number):Observable<Operacion>{

@@ -44,6 +44,10 @@ export class EnviarTransferenciaComponent implements OnInit {
     swal('Operacion actualizada',`La Operación ${this.operacion.idOperacion} ha sido actualizado con exito`,`success`);
   }
 
+  botonAtras(){
+    this.router.navigate(['/operaciones']);
+  }
+
   guardarTransferencia(){
     this.transferenciaServicio.registrarTransferencia(this.transferencia).subscribe(dato => {
       console.log(this.transferencia);

@@ -10,6 +10,7 @@ export class Transferencia {
     moneda:string;
     codEntidadFinanciera:string;
     nroOperacionTransferida:number;
+    nroTransaccion:String;
   }
 
   export interface Credentials{
