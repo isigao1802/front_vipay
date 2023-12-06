@@ -17,3 +17,24 @@
 .move-left-label {
     margin-right: 100px; /* Ajusta el valor según tus necesidades */
 }
+
+.move-right-label {
+    margin-left: 200px; /* Ajusta el valor según tus necesidades */
+}
+
+.my-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .my-button:hover {
+    background-color: #45a049;
+  }
+  
+  .my-button:active {
+    background-color: #3e8e41;
+  }
