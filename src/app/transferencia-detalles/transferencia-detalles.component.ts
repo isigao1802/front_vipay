@@ -3,6 +3,7 @@ import { TransferenciaService } from '../transferencia.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Transferencia } from '../transferencia';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-transferencia-detalles',
@@ -13,7 +14,7 @@ export class TransferenciaDetallesComponent implements OnInit {
 
   id:number;
   transferencia:Transferencia;
-  constructor(private route:ActivatedRoute,private transferenciaServicio:TransferenciaService) { }
+  constructor(private route:ActivatedRoute,private transferenciaServicio:TransferenciaService, private router: Router) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['idTransferencia'];
@@ -22,6 +23,10 @@ export class TransferenciaDetallesComponent implements OnInit {
       this.transferencia = dato;
       swal(`Detalles de la Transferencia ${this.transferencia.idTransferencia}`);
     });
+  }
+
+  botonAtras(){
+    this.router.navigate(['/transferencias']);
   }
 
 }

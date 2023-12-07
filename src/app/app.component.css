@@ -1,0 +1,11 @@
+.with-logo {
+    background-image: url('C:\Users\TI\Desktop\diaconiaWeb\icono.jpg');
+    background-size: 15px; /* Puedes ajustar esto según tus necesidades */
+    background-repeat: no-repeat;
+    background-position: right bottom; /* Ajusta la posición vertical a la parte inferior */
+  }
+
+  .text-right {
+    text-align: right;
+  }
+  

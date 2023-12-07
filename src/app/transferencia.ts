@@ -11,6 +11,7 @@ export class Transferencia {
     codEntidadFinanciera:string;
     nroOperacionTransferida:number;
     nroTransaccion:String;
+    fechaTransferencia:String;
   }
 
   export interface Credentials{

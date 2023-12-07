@@ -37,7 +37,6 @@
     background-image: url('C:\Users\TI\Desktop\diaconiaWeb\icono.jpg');
     background-size: 80px; /* Puedes ajustar esto según tus necesidades */
     background-repeat: no-repeat;
-    background-position: top center;
-    /*background-position: right bottom;*/ /* Ajusta la posición vertical a la parte inferior */
+    background-position: right bottom; /* Ajusta la posición vertical a la parte inferior */
   }
   
