@@ -1,41 +1,33 @@
-
 <h2 class="text-center">Lista de Operaciones Transferidas</h2>
 <nav>
   <button routerLink="/login" class="btn btn-primary">Cerrar Sesión</button>
-  <span style="margin-right: 10px;"></span> <!-- Espacio entre los botones -->
-  <button routerLink="/operaciones" class="btn btn-danger">Listar Operaciones Pendientes</button>
+  <span style="margin-right: 10px;"></span>
+  <button routerLink="/operaciones" class="btn btn-danger">Ir a lista de Operaciones Pendientes</button>
 </nav>
-<table class="table table-striped">
+<table class="table table-striped text-center"> <!-- Aplicar la clase text-center para centrar horizontalmente la tabla -->
   <thead class="table-dark">
     <tr>
       <th>ID</th>
+      <th>Fecha de Transferencia</th>
       <th>Nombre de Crédito</th>
       <th>Apellido de Crédito</th>
-      <th>Tipo de Documento</th>
       <th>Número de Documento</th>
       <th>Cuenta Crédito</th>
       <th>Importe</th>
-      <th>Moneda</th>
-      <th>Código Entidad Financiera</th>
-      <th>Acciones</th>
+      <th>Acción</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor= "let transferencia of transferencias">
+    <tr *ngFor="let transferencia of transferencias">
       <td>{{transferencia.idTransferencia}}</td>
+      <td>{{transferencia.fechaTransferencia}}</td>
       <td>{{transferencia.nombreCredito}}</td>
       <td>{{transferencia.apellidoCredito}}</td>
-      <td>{{transferencia.tipoDocCredito}}</td>
       <td>{{transferencia.nroDocCredito}}</td>
       <td>{{transferencia.nroCuentaCredito}}</td>
       <td>{{transferencia.importe}}</td>
-      <td>{{transferencia.moneda}}</td>
-      <td>{{transferencia.codEntidadFinanciera}}</td>
-      <td class="d-flex justify-content-center">
-        <!-- 
-        <button (click)= "actualizarTransferencia(transferencia.idTransferencia)" class="btn btn-info">Editar</button>
-        <button (click)= "eliminarTransferencia(transferencia.idTransferencia)" class="btn btn-danger" style="margin-left : 10px;">Eliminar</button> -->
-        <button (click)= "verDetallesDelaTransferencia(transferencia.idTransferencia)" class="btn btn-primary" style="margin-left : 10px;">Detalles</button>
+      <td class="d-flex justify-content-center align-middle"> <!-- Aplicar la clase align-middle para centrar verticalmente las celdas -->
+        <button (click)="verDetallesDelaTransferencia(transferencia.idTransferencia)" class="btn btn-primary" style="margin-left: 10px;">Ver Detalles</button>
       </td>
     </tr>
   </tbody>
