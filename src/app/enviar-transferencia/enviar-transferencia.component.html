@@ -1,271 +1,277 @@
 <div class="col-md-6 offset-md-3 text-center">
-    <h3 class="text-center">Realizar Transferencia</h3>
-    <form (ngSubmit)= "onSubmit()" #operacionForm = "ngForm">
-      
-      <div style="display: flex; gap: 40px;"> 
-        <div class="form-group text-center move-right-label">
-            <label>Id Operación a Desembolsar</label>
-            <input type="text-center"
-                   class="form-control text-center"
-                   id="id"
-                   [(ngModel)]="operacion.idOperacion"
-                   name="id"
-                   [readonly]="readonly"
-                   required
-                   minlength="5"
-                   maxlength="10"
-                   placeholder="Digite el id"
-                   #id="ngModel"
-            >
-        </div>
-    
-        <div class="form-group">
-            <label>Cuenta Individual Diaconia</label>
-            <input type="text-center"
-                   class="form-control text-center"
-                   id="nroCuentaInvidual"
-                   [(ngModel)]="operacion.nroCuentaInvidual"
-                   name="nroCuentaInvidual"
-                   [readonly]="readonly"
-                   required
-                   minlength="4"
-                   maxlength="40"
-                   placeholder="Digite número de cuenta Individual"
-                   #nroCuentaInvidual="ngModel"
-            >
-        </div>
-    </div>
-    
+  <h3 class="text-center">Realizar Transferencia</h3>
+  <form (ngSubmit)="onSubmit()" #operacionForm2="ngForm">
 
-    <div style="display: flex; gap: 40px;">
+      <div style="display: flex; gap: 40px;">
+          <div class="form-group text-center">
+              <label>Id Operación a Desembolsar</label>
+              <input type="text-center"
+                     class="form-control text-center"
+                     id="id"
+                     [(ngModel)]="operacion.idOperacion"
+                     name="id"
+                     [readonly]="readonly"
+                     required
+                     minlength="5"
+                     maxlength="10"
+                     placeholder="Digite el id"
+                     #id="ngModel"
+              >
+          </div>
 
-      <div class="form-group text-center move-right-label">
-        <label>Nombre de Crédito</label>
-        <input type = "text-center"
-        class="form-control text-center"
-        id = "nombreCredito"
-        [(ngModel)] = "operacion.nombreCuentaIndividual"
-        name = "nombreCredito"
-        [readonly]="readonly"
-        required
-        minlength="1"
-        maxlength="40"
-        placeholder="Digite el nombre de Crédito "
-        #nombreCredito = "ngModel"
-        >
-        <div class="alert alert-danger" *ngIf= "nombreCredito.invalid && (nombreCredito.dirty || nombreCredito.touched)">
-          <div *ngIf = "nombreCredito.errors.required">
-            Digite el nombre de Crédito por favor
+          <div class="form-group">
+              <label>Cuenta Individual Diaconia</label>
+              <input type="text-center"
+                     class="form-control text-center"
+                     id="nroCuentaInvidual"
+                     [(ngModel)]="operacion.nroCuentaInvidual"
+                     name="nroCuentaInvidual"
+                     [readonly]="readonly"
+                     required
+                     minlength="4"
+                     maxlength="40"
+                     placeholder="Digite número de cuenta Individual"
+                     #nroCuentaInvidual="ngModel"
+              >
           </div>
-          <div *ngIf = "nombreCredito.errors.minlength">
-            El nombre de Crédito debe contener como minimo 1 caracteres
-          </div>
-          <div *ngIf = "nombreCredito.errors.maxlength">
-            El nombre de Crédito debe tener como maximo 10 caracteres
-          </div>
-        </div>
-      </div>
-  
-      <div class="form-group text-center">
-        <label>Apellido de Crédito</label>
-        <input type = "text-center"
-        class="form-control text-center"
-        id = "apellidoCredito"
-        [(ngModel)] = "operacion.apellidoCuentaIndividual"
-        name = "apellidoCredito"
-        [readonly]="readonly"
-        required
-        minlength="1"
-        maxlength="20"
-        placeholder="Digite el apellido de Crédito "
-        #apellidoCredito = "ngModel"
-        >
-        <div class="alert alert-danger" *ngIf= "apellidoCredito.invalid && (apellidoCredito.dirty || apellidoCredito.touched)">
-          <div *ngIf = "apellidoCredito.errors.required">
-            Digite el apellido de Crédito por favor
-          </div>
-          <div *ngIf = "apellidoCredito.errors.minlength">
-            El apellido de Crédito debe contener como minimo 1 caracteres
-          </div>
-          <div *ngIf = "apellidoCredito.errors.maxlength">
-            El apellido de Crédito debe tener como maximo 20 caracteres
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div style="display: flex; gap: 40px;">
-    
-      <div class="form-group text-center move-right-label">
-        <label>Moneda : </label>
-        <input type = "text-center"
-        class="form-control text-center"
-        id = "moneda"
-        [(ngModel)] = "transferencia.moneda"
-        name = "moneda"
-        [readonly]="readonly"
-        required
-        minlength="1"
-        maxlength="10"
-        placeholder="Digite el número de Documento "
-        #moneda = "ngModel"
-        >
-        <div class="alert alert-danger" *ngIf= "moneda.invalid && (moneda.dirty || moneda.touched)">
-          <div *ngIf = "moneda.errors.required">
-            Ingrese la moneda por favor
-          </div>
-          <div *ngIf = "moneda.errors.minlength">
-            La moneda debe contener como minimo 1 caracteres
-          </div>
-          <div *ngIf = "moneda.errors.maxlength">
-            El número de cuenta debe tener como maximo 20 caracteres
-          </div>
-        </div>
       </div>
 
-      <div class="form-group text-center">
-        <label>Importe : </label>
-        <input type="number"
-            class="form-control text-center"
-            id="importe"
-            [(ngModel)]="operacion.montoDesembolso "
-            name="importe"
-            [readonly]="readonly"
-            required
-            minlength="1"
-            maxlength="20"
-            placeholder="Ingrese el monto a desembolsar "
-            #importe="ngModel"
-        >
-        <div class="alert alert-danger" *ngIf="importe.invalid && (importe.dirty || importe.touched)">
-            <div *ngIf="importe.errors.required">
-                Ingrese el importe por favor
-            </div>
-            <div *ngIf="importe.errors.minlength">
-                El importe debe contener como mínimo 1 caracteres
-            </div>
-            <div *ngIf="importe.errors.maxlength">
-                El importe debe tener como máximo 20 caracteres
-            </div>
-        </div>
-      </div> 
-    </div>
 
-    <div style="display: flex; gap: 40px; ">
-      
-      <div class="form-group text-center  move-right-label">
-        <label>Tipo de Documento: </label>
-        <select class="form-control ajuste-input text-center"
-                id="tipoDocCredito"
-                [(ngModel)]="transferencia.tipoDocCredito"
-                name="tipoDocCredito"
-                required
-                minlength="1"
-                maxlength="10"
-                placeholder="Digite el número de Documento "
-                #tipoDocCredito="ngModel">
-            <option value="CI">CI</option>
-            <option value="RUC">RUC</option>
-        </select>
-        <div class="alert alert-danger" *ngIf= "tipoDocCredito.invalid && (tipoDocCredito.dirty || tipoDocCredito.touched)">
-          <div *ngIf = "tipoDocCredito.errors.required">
-            Seleccione tipo de Documento
+      <div style="display: flex; gap: 40px;">
+
+          <div class="form-group text-center">
+              <label>Nombre de Crédito</label>
+              <input type="text-center"
+                     class="form-control text-center"
+                     id="nombreCredito"
+                     [(ngModel)]="operacion.nombreCuentaIndividual"
+                     name="nombreCredito"
+                     [readonly]="readonly"
+                     required
+                     minlength="1"
+                     maxlength="40"
+                     placeholder="Digite el nombre de Crédito "
+                     #nombreCredito="ngModel"
+              >
+              <div class="alert alert-danger"
+                   *ngIf="nombreCredito.invalid && (nombreCredito.dirty || nombreCredito.touched)">
+                  <div *ngIf="nombreCredito.errors.required">
+                      Digite el nombre de Crédito por favor
+                  </div>
+                  <div *ngIf="nombreCredito.errors.minlength">
+                      El nombre de Crédito debe contener como minimo 1 caracteres
+                  </div>
+                  <div *ngIf="nombreCredito.errors.maxlength">
+                      El nombre de Crédito debe tener como maximo 10 caracteres
+                  </div>
+              </div>
           </div>
-          <div *ngIf = "tipoDocCredito.errors.minlength">
-            El tipo de Documento debe contener como minimo 1 caracteres
+
+          <div class="form-group text-center">
+              <label>Apellido de Crédito</label>
+              <input type="text-center"
+                     class="form-control text-center"
+                     id="apellidoCredito"
+                     [(ngModel)]="operacion.apellidoCuentaIndividual"
+                     name="apellidoCredito"
+                     [readonly]="readonly"
+                     required
+                     minlength="1"
+                     maxlength="20"
+                     placeholder="Digite el apellido de Crédito "
+                     #apellidoCredito="ngModel"
+              >
+              <div class="alert alert-danger"
+                   *ngIf="apellidoCredito.invalid && (apellidoCredito.dirty || apellidoCredito.touched)">
+                  <div *ngIf="apellidoCredito.errors.required">
+                      Digite el apellido de Crédito por favor
+                  </div>
+                  <div *ngIf="apellidoCredito.errors.minlength">
+                      El apellido de Crédito debe contener como minimo 1 caracteres
+                  </div>
+                  <div *ngIf="apellidoCredito.errors.maxlength">
+                      El apellido de Crédito debe tener como maximo 20 caracteres
+                  </div>
+              </div>
           </div>
-          <div *ngIf = "tipoDocCredito.errors.maxlength">
-            El tipo de Documento debe tener como maximo 3 caracteres
-          </div>
-        </div>
-    </div>
-      
-    <div class="form-group ">
-        <label>Número de Documento : </label>
-        <input type = "text-center"
-        class="form-control ajuste-input text-center"
-        id = "nroDocCredito"
-        [(ngModel)] = "operacion.nroDocumento"
-        name = "nroDocCredito"
-        [readonly]="readonly"
-        required
-        minlength="1"
-        maxlength="10"
-        placeholder="Digite el número de Documento "
-        #nroDocCredito = "ngModel"
-        >
-        <div class="alert alert-danger" *ngIf= "nroDocCredito.invalid && (nroDocCredito.dirty || nroDocCredito.touched)">
-          <div *ngIf = "nroDocCredito.errors.required">
-            Digite el número de documento por favor
-          </div>
-          <div *ngIf = "nroDocCredito.errors.minlength">
-            El número de documento debe contener como minimo 1 caracteres
-          </div>
-          <div *ngIf = "nroDocCredito.errors.maxlength">
-            El número de documento debe tener como maximo 10 caracteres
-          </div>
-        </div>
       </div>
-  
-  </div>
 
-      <div class="form-group text-center">
-        <label ajuste-input>Número de Cuenta Bancaria</label>
-        <input type = "text"
-        class="form-control ajuste-input2 text-center move-right-label"
-        id = "nroCuentaCredito"
-        [(ngModel)] = "transferencia.nroCuentaCredito"
-        name = "nroCuentaCredito"
-        required
-        minlength="1"
-        maxlength="20"
-        placeholder="Ingrese el número de Cuenta Bancaria del Cliente "
-        #nroCuentaCredito = "ngModel"
-        >
-        <div class="alert alert-danger" *ngIf= "nroCuentaCredito.invalid && (nroCuentaCredito.dirty || nroCuentaCredito.touched)">
-          <div *ngIf = "nroCuentaCredito.errors.required">
-            Ingrese el número de cuenta por favor
+      <div style="display: flex; gap: 40px;">
+
+          <div class="form-group text-center">
+              <label>Moneda : </label>
+              <input type="text-center"
+                     class="form-control text-center"
+                     id="moneda"
+                     [(ngModel)]="transferencia.moneda"
+                     name="moneda"
+                     [readonly]="readonly"
+                     required
+                     minlength="1"
+                     maxlength="10"
+                     placeholder="Digite el número de Documento "
+                     #moneda="ngModel"
+              >
+              <div class="alert alert-danger" *ngIf="moneda.invalid && (moneda.dirty || moneda.touched)">
+                  <div *ngIf="moneda.errors.required">
+                      Ingrese la moneda por favor
+                  </div>
+                  <div *ngIf="moneda.errors.minlength">
+                      La moneda debe contener como minimo 1 caracteres
+                  </div>
+                  <div *ngIf="moneda.errors.maxlength">
+                      El número de cuenta debe tener como maximo 20 caracteres
+                  </div>
+              </div>
           </div>
-          <div *ngIf = "nroCuentaCredito.errors.minlength">
-            El número de cuenta debe contener como minimo 1 caracteres
+
+          <div class="form-group text-center">
+              <label>Importe : </label>
+              <input type="number"
+                     class="form-control text-center"
+                     id="importe"
+                     [(ngModel)]="operacion.montoDesembolso "
+                     name="importe"
+                     [readonly]="readonly"
+                     required
+                     minlength="1"
+                     maxlength="20"
+                     placeholder="Ingrese el monto a desembolsar "
+                     #importe="ngModel"
+              >
+              <div class="alert alert-danger" *ngIf="importe.invalid && (importe.dirty || importe.touched)">
+                  <div *ngIf="importe.errors.required">
+                      Ingrese el importe por favor
+                  </div>
+                  <div *ngIf="importe.errors.minlength">
+                      El importe debe contener como mínimo 1 caracteres
+                  </div>
+                  <div *ngIf="importe.errors.maxlength">
+                      El importe debe tener como máximo 20 caracteres
+                  </div>
+              </div>
           </div>
-          <div *ngIf = "nroCuentaCredito.errors.maxlength">
-            El número de cuenta debe tener como maximo 20 caracteres
+      </div>
+
+      <div style="display: flex; gap: 40px; ">
+
+          <div class="form-group text-center">
+              <label>Tipo de Documento: </label>
+              <select class="form-control ajuste-input text-center"
+                      id="tipoDocCredito"
+                      [(ngModel)]="transferencia.tipoDocCredito"
+                      name="tipoDocCredito"
+                      required
+                      minlength="1"
+                      maxlength="10"
+                      placeholder="Digite el número de Documento "
+                      #tipoDocCredito="ngModel">
+                  <option value="CI">CI</option>
+                  <option value="RUC">RUC</option>
+              </select>
+              <div class="alert alert-danger"
+                   *ngIf="tipoDocCredito.invalid && (tipoDocCredito.dirty || tipoDocCredito.touched)">
+                  <div *ngIf="tipoDocCredito.errors.required">
+                      Seleccione tipo de Documento
+                  </div>
+                  <div *ngIf="tipoDocCredito.errors.minlength">
+                      El tipo de Documento debe contener como minimo 1 caracteres
+                  </div>
+                  <div *ngIf="tipoDocCredito.errors.maxlength">
+                      El tipo de Documento debe tener como maximo 3 caracteres
+                  </div>
+              </div>
           </div>
-        </div>
+
+          <div class="form-group ">
+              <label>Número de Documento : </label>
+              <input type="text-center"
+                     class="form-control text-center"
+                     id="nroDocCredito"
+                     [(ngModel)]="operacion.nroDocumento"
+                     name="nroDocCredito"
+                     [readonly]="readonly"
+                     required
+                     minlength="1"
+                     maxlength="10"
+                     placeholder="Digite el número de Documento "
+                     #nroDocCredito="ngModel"
+              >
+              <div class="alert alert-danger"
+                   *ngIf="nroDocCredito.invalid && (nroDocCredito.dirty || nroDocCredito.touched)">
+                  <div *ngIf="nroDocCredito.errors.required">
+                      Digite el número de documento por favor
+                  </div>
+                  <div *ngIf="nroDocCredito.errors.minlength">
+                      El número de documento debe contener como minimo 1 caracteres
+                  </div>
+                  <div *ngIf="nroDocCredito.errors.maxlength">
+                      El número de documento debe tener como maximo 10 caracteres
+                  </div>
+              </div>
+          </div>
+
       </div>
 
       <div class="form-group text-center">
-        <label>Código Entidad Financiera</label>
-        <input type = "text-center"
-        class="form-control ajuste-input2 text-center move-right-label"
-        id = "codEntidadFinanciera"
-        [(ngModel)] = "transferencia.codEntidadFinanciera"
-        name = "codEntidadFinanciera"
-        required
-        minlength="1"
-        maxlength="10"
-        placeholder="Digite el número de Documento "
-        #codEntidadFinanciera = "ngModel"
-        >
-        <div class="alert alert-danger" *ngIf= "codEntidadFinanciera.invalid && (codEntidadFinanciera.dirty || codEntidadFinanciera.touched)">
-          <div *ngIf = "codEntidadFinanciera.errors.required">
-            Ingrese el código de la entidad por favor
+          <label ajuste-input class="text">Número de Cuenta Bancaria</label>
+          <input type="text"
+                 class="form-control ajuste-input2 text-center"
+                 id="nroCuentaCredito"
+                 [(ngModel)]="transferencia.nroCuentaCredito"
+                 name="nroCuentaCredito"
+                 required
+                 minlength="1"
+                 maxlength="20"
+                 placeholder="Ingrese el número de Cuenta Bancaria del Cliente "
+                 #nroCuentaCredito="ngModel"
+          >
+          <div class="alert alert-danger"
+               *ngIf="nroCuentaCredito.invalid && (nroCuentaCredito.dirty || nroCuentaCredito.touched)">
+              <div *ngIf="nroCuentaCredito.errors.required">
+                  Ingrese el número de cuenta por favor
+              </div>
+              <div *ngIf="nroCuentaCredito.errors.minlength">
+                  El número de cuenta debe contener como minimo 1 caracteres
+              </div>
+              <div *ngIf="nroCuentaCredito.errors.maxlength">
+                  El número de cuenta debe tener como maximo 20 caracteres
+              </div>
           </div>
-          <div *ngIf = "codEntidadFinanciera.errors.minlength">
-            El código de la entidad debe contener como minimo 1 caracteres
-          </div>
-          <div *ngIf = "codEntidadFinanciera.errors.maxlength">
-            El código de la entidad debe tener como maximo 10 caracteres
-          </div>
-        </div>
       </div>
-      <div>
-      <button class="btn btn-secondary" [disabled]="!operacionForm.form.valid" (click)="botonAtras()">Atrás</button>
-       &nbsp;
-       &nbsp;
-      <button class="btn btn-primary" [disabled]="!operacionForm.form.valid" (click)="onSubmit()">Enviar</button>
+
+      <div class="form-group text-center">
+          <label>Código Entidad Financiera</label>
+          <input type="text-center"
+                 class="form-control ajuste-input2 text-center"
+                 id="codEntidadFinanciera"
+                 [(ngModel)]="transferencia.codEntidadFinanciera"
+                 name="codEntidadFinanciera"
+                 required
+                 minlength="1"
+                 maxlength="10"
+                 placeholder="Digite el número de Documento "
+                 #codEntidadFinanciera="ngModel"
+          >
+          <div class="alert alert-danger"
+               *ngIf="codEntidadFinanciera.invalid && (codEntidadFinanciera.dirty || codEntidadFinanciera.touched)">
+              <div *ngIf="codEntidadFinanciera.errors.required">
+                  Ingrese el código de la entidad por favor
+              </div>
+              <div *ngIf="codEntidadFinanciera.errors.minlength">
+                  El código de la entidad debe contener como minimo 1 caracteres
+              </div>
+              <div *ngIf="codEntidadFinanciera.errors.maxlength">
+                  El código de la entidad debe tener como maximo 10 caracteres
+              </div>
+          </div>
       </div>
-    </form>
-  </div>
-  
+      <div class="text-left">
+          <button class="btn btn-secondary" [disabled]="!operacionForm2.form.valid" (click)="botonAtras()">Atrás
+          </button>
+          &nbsp;
+          &nbsp;
+          <button class="btn btn-primary ml-auto" [disabled]="!operacionForm2.form.valid" style="margin-left: auto;">Enviar</button>
+      </div>
+  </form>
+</div>

@@ -5,7 +5,6 @@ import { ListaOperacionesComponent } from './lista-operaciones/lista-operaciones
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RegistrarTransferenciaComponent } from './registrar-transferencia/registrar-transferencia.component';
-import { ActualizarOperacionComponent } from './actualizar-operacion/actualizar-operacion.component';
 import { EnviarTransferenciaComponent } from './enviar-transferencia/enviar-transferencia.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './auth.guard';
@@ -16,7 +15,6 @@ const routes: Routes = [
   {path:'',redirectTo:'login',pathMatch:'full'},
   {path : 'operaciones/enviar-transferencia/:idOperacion',component : EnviarTransferenciaComponent},
   {path : 'registrar-transferencia',component : RegistrarTransferenciaComponent},
-  {path : 'actualizar-transferencia/:nroCuenta',component : ActualizarTransferenciaComponent},
   {path : 'transferencia-detalles/:idTransferencia',component : TransferenciaDetallesComponent},
   {path : 'login',component : LoginComponent}
 ];

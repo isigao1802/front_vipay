@@ -16,28 +16,20 @@ export class TransferenciaService {
   private obtenerOperacion="obtener_operacion";
   private obtenerTransferencia="obtener_transferencia";
 
-  // Incluyo el token de seguridad
-  private token = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJpc2lkcm9nYW9uYUBkaWFjb25pYS5jb20ucHkiLCJleHAiOjE3MDM4NzI1NTcsIm5vbWJyZSI6IklzaWRybyBHYW9uYSJ9.7Ua08O0W9HVZJuZ6VhgHHAlFHJAkFT0yS-hQSOMReW4";
+ 
 
   constructor(private httpClient : HttpClient) { }
 
-  private getHeaders(): HttpHeaders {
-    return new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJpc2lkcm9nYW9uYUBkaWFjb25pYS5jb20ucHkiLCJleHAiOjE3MDM2OTc2MTYsIm5vbWJyZSI6IklzaWRybyBHYW9uYSJ9.qUJtMPg-FhkopFQMyRtv7FbgL68vT0sbrkDQ2KBv-XA`
-      //'Authorization': Bearer ${this.token}
+
+  obtenerListaDeTransferencias(): Observable<Transferencia[]> {
+    const headers = new HttpHeaders({
+      'Authorization': 'Basic ' + btoa('admin:admin')
     });
+    return this.httpClient.get<Transferencia[]>(`${this.baseURL}/${this.listar}`, { headers: headers });
   }
-
-
-  //este metodo nos sirve para obtener las transferencias
-  obtenerListaDeTransferencias():Observable<Transferencia[]>{
-    return this.httpClient.get<Transferencia[]>(`${this.baseURL}/${this.listar}`, { headers: this.getHeaders()});
-  }
-
   //este metodo nos sirve para registrar una transferencias
   registrarTransferencia(transferencia:Transferencia) : Observable<Object>{
-    return this.httpClient.post(`${this.baseURL}/${this.guardar_transferencias}`,transferencia, { headers: this.getHeaders()});
+    return this.httpClient.post(`${this.baseURL}/${this.guardar_transferencias}`,transferencia);
   }
 
   //este metodo sirve para actualizar la transferencia
@@ -47,11 +39,11 @@ export class TransferenciaService {
 
   //este metodo sirve para obtener o buscar una transferencia
   obtenerTransferenciaPorId(id:number):Observable<Transferencia>{
-    return this.httpClient.get<Transferencia>(`${this.baseURL}/${this.obtenerTransferencia}/${id}`, { headers: this.getHeaders()});
+    return this.httpClient.get<Transferencia>(`${this.baseURL}/${this.obtenerTransferencia}/${id}`);
   }
 
   obtenerOperacionPorId(id:number):Observable<Operacion>{
-    return this.httpClient.get<Operacion>(`${this.baseURL}/${this.obtenerOperacion}/${id}`, { headers: this.getHeaders()});
+    return this.httpClient.get<Operacion>(`${this.baseURL}/${this.obtenerOperacion}/${id}`);
   }
 
 

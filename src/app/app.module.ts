@@ -10,7 +10,6 @@ import { FormsModule } from '@angular/forms';
 import { ActualizarTransferenciaComponent } from './actualizar-transferencia/actualizar-transferencia.component';
 import { TransferenciaDetallesComponent } from './transferencia-detalles/transferencia-detalles.component';
 import { ListaOperacionesComponent } from './lista-operaciones/lista-operaciones.component';
-import { ActualizarOperacionComponent } from './actualizar-operacion/actualizar-operacion.component';
 import { EnviarTransferenciaComponent } from './enviar-transferencia/enviar-transferencia.component';
 import { LoginComponent } from './login/login.component';
 import { AuthInterceptor } from './helpers/auth.interceptor';
@@ -27,7 +26,6 @@ import { AuthGuard } from './auth.guard';
     ActualizarTransferenciaComponent,
     TransferenciaDetallesComponent,
     ListaOperacionesComponent,
-    ActualizarOperacionComponent,
     EnviarTransferenciaComponent,
     LoginComponent
   ],
