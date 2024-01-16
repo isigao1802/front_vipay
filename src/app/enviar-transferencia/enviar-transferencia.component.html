@@ -1,7 +1,8 @@
-<div class="col-md-6 offset-md-3 text-center">
-  <h3 class="text-center">Realizar Transferencia</h3>
-  <form (ngSubmit)="onSubmit()" #operacionForm2="ngForm">
-
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <h3 class="text-center">Realizar Transferencia</h3>
+      <form (ngSubmit)="onSubmit()" #operacionForm2="ngForm">
       <div style="display: flex; gap: 40px;">
           <div class="form-group text-center">
               <label>Id Operación a Desembolsar</label>
@@ -53,18 +54,6 @@
                      placeholder="Digite el nombre de Crédito "
                      #nombreCredito="ngModel"
               >
-              <div class="alert alert-danger"
-                   *ngIf="nombreCredito.invalid && (nombreCredito.dirty || nombreCredito.touched)">
-                  <div *ngIf="nombreCredito.errors.required">
-                      Digite el nombre de Crédito por favor
-                  </div>
-                  <div *ngIf="nombreCredito.errors.minlength">
-                      El nombre de Crédito debe contener como minimo 1 caracteres
-                  </div>
-                  <div *ngIf="nombreCredito.errors.maxlength">
-                      El nombre de Crédito debe tener como maximo 10 caracteres
-                  </div>
-              </div>
           </div>
 
           <div class="form-group text-center">
@@ -112,17 +101,6 @@
                      placeholder="Digite el número de Documento "
                      #moneda="ngModel"
               >
-              <div class="alert alert-danger" *ngIf="moneda.invalid && (moneda.dirty || moneda.touched)">
-                  <div *ngIf="moneda.errors.required">
-                      Ingrese la moneda por favor
-                  </div>
-                  <div *ngIf="moneda.errors.minlength">
-                      La moneda debe contener como minimo 1 caracteres
-                  </div>
-                  <div *ngIf="moneda.errors.maxlength">
-                      El número de cuenta debe tener como maximo 20 caracteres
-                  </div>
-              </div>
           </div>
 
           <div class="form-group text-center">
@@ -139,17 +117,6 @@
                      placeholder="Ingrese el monto a desembolsar "
                      #importe="ngModel"
               >
-              <div class="alert alert-danger" *ngIf="importe.invalid && (importe.dirty || importe.touched)">
-                  <div *ngIf="importe.errors.required">
-                      Ingrese el importe por favor
-                  </div>
-                  <div *ngIf="importe.errors.minlength">
-                      El importe debe contener como mínimo 1 caracteres
-                  </div>
-                  <div *ngIf="importe.errors.maxlength">
-                      El importe debe tener como máximo 20 caracteres
-                  </div>
-              </div>
           </div>
       </div>
 
@@ -197,20 +164,7 @@
                      placeholder="Digite el número de Documento "
                      #nroDocCredito="ngModel"
               >
-              <div class="alert alert-danger"
-                   *ngIf="nroDocCredito.invalid && (nroDocCredito.dirty || nroDocCredito.touched)">
-                  <div *ngIf="nroDocCredito.errors.required">
-                      Digite el número de documento por favor
-                  </div>
-                  <div *ngIf="nroDocCredito.errors.minlength">
-                      El número de documento debe contener como minimo 1 caracteres
-                  </div>
-                  <div *ngIf="nroDocCredito.errors.maxlength">
-                      El número de documento debe tener como maximo 10 caracteres
-                  </div>
-              </div>
           </div>
-
       </div>
 
       <div class="form-group text-center">
@@ -266,12 +220,14 @@
               </div>
           </div>
       </div>
-      <div class="text-left">
+     <div class="text-center">
           <button class="btn btn-secondary" [disabled]="!operacionForm2.form.valid" (click)="botonAtras()">Atrás
           </button>
           &nbsp;
           &nbsp;
-          <button class="btn btn-primary ml-auto" [disabled]="!operacionForm2.form.valid" style="margin-left: auto;">Enviar</button>
-      </div>
-  </form>
+          <button class="btn btn-primary ml-auto" [disabled]="!operacionForm2.form.valid">Enviar</button>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>

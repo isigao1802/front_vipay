@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "gestion-empleados-fronted:build:production"
+              "buildTarget": "gestion-empleados-fronted:build:production"
             },
             "development": {
-              "browserTarget": "gestion-empleados-fronted:build:development"
+              "buildTarget": "gestion-empleados-fronted:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "gestion-empleados-fronted:build"
+            "buildTarget": "gestion-empleados-fronted:build"
           }
         },
         "test": {
